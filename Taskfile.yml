@@ -1,0 +1,19 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - odin build src/ -out:./bin/gfs
+
+  test:
+    cmds:
+      - odin test src/
+      - rm -rf src.bin
+
+  run:
+    cmds:
+      - ./bin/gfs
+
+  clean:
+    cmds:
+      - rm -rf ./bin/gfs
